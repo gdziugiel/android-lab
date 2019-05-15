@@ -74,7 +74,7 @@ public class MySQLite extends
     public Animal pobierz(int id){
 
         SQLiteDatabase db =
-                this.getWritableDatabase();
+                this.getReadableDatabase();
 
         Cursor cursor =
                 db.query("animals",
@@ -103,7 +103,7 @@ public class MySQLite extends
     }
     public Cursor lista(){
         SQLiteDatabase db =
-                getReadableDatabase();
+                this.getReadableDatabase();
         return db.rawQuery("Select * from animals",null);
     }
 }
